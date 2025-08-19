@@ -1,0 +1,1445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Rohit Bhatnagar - History & Achievements</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f0f5ff 0%, #e6f0ff 100%);
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        header {
+            background: linear-gradient(90deg, #1a3a5f 0%, #2c5a8a 100%);
+            color: white;
+            padding: 1.2rem 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .logo-icon {
+            font-size: 2rem;
+            color: #4da6ff;
+        }
+        
+        .logo-text {
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        
+        .logo-text span {
+            color: #4da6ff;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(26, 58, 95, 0.85), rgba(26, 58, 95, 0.9)), 
+                        url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070') center/cover no-repeat;
+            height: 420px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            text-align: center;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: white;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 300;
+        }
+        
+        .quote-box {
+            background: rgba(255, 255, 255, 0.15);
+            border-left: 4px solid #4da6ff;
+            padding: 20px;
+            margin: 40px auto;
+            max-width: 700px;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .quote-text {
+            font-size: 1.3rem;
+            font-style: italic;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+        
+        .quote-author {
+            text-align: right;
+            font-weight: 500;
+            color: #4da6ff;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: #1a3a5f;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #1a3a5f, #4da6ff);
+            border-radius: 2px;
+        }
+        
+        .section-header p {
+            font-size: 1.15rem;
+            color: #555;
+            max-width: 700px;
+            margin: 25px auto 0;
+            line-height: 1.7;
+        }
+        
+        .about-container {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            height: 600px;
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .about-content {
+            flex: 1;
+        }
+        
+        .about-content h3 {
+            font-size: 1.8rem;
+            color: #1a3a5f;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        .about-content p {
+            font-size: 1.1rem;
+            color: #1a3a5f;
+            position: relative;
+            text-align: justify;   /* makes text aligned neatly */
+            text-indent: 40px;     /* space for the first line */
+           
+            
+        }
+        
+        .about-content h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: #4da6ff;
+        }
+        
+        .timeline {
+            margin: 40px 0;
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 30px;
+            border-left: 3px solid #4da6ff;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background: #1a3a5f;
+            border-radius: 50%;
+            border: 3px solid #4da6ff;
+        }
+        
+        .timeline-item h4 {
+            font-size: 1.3rem;
+            color: #1a3a5f;
+            margin-bottom: 8px;
+        }
+        
+        .timeline-item .date {
+            display: inline-block;
+            background: #e3f2ff;
+            color: #1a3a5f;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+        
+        .timeline-item .company {
+            display: inline-block;
+            background: #1a3a5f;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 500;
+            margin-left: 8px;
+            font-size: 0.85rem;
+        }
+        
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .achievement-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .achievement-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card-header {
+            background: linear-gradient(90deg, #1a3a5f 0%, #2c5a8a 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #4da6ff;
+        }
+        
+        .card-header h3 {
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+        }
+        
+        .card-body {
+            padding: 25px 20px;
+            flex-grow: 1;
+        }
+        
+        .card-body p {
+            color: #555;
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+        
+        .card-footer {
+            padding: 0 20px 20px;
+            font-size: 0.9rem;
+            color: #777;
+            font-weight: 500;
+        }
+        
+        .gallery-section {
+            background: linear-gradient(135deg, #e6f0ff 0%, #d9e8ff 100%);
+        }
+        
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .gallery-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .gallery-image {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .gallery-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-card:hover .gallery-image img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-content {
+            padding: 25px;
+        }
+        
+        .gallery-content h3 {
+            font-size: 1.4rem;
+            color: #1a3a5f;
+            margin-bottom: 15px;
+        }
+        
+        .gallery-content p {
+            color: #555;
+            line-height: 1.7;
+        }
+        
+        /* Updated Team Pragati Section Styles */
+        .conference-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        
+        .conference-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            height: 100%;
+        }
+        
+        .conference-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .conference-image {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .conference-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .conference-card:hover .conference-image img {
+            transform: scale(1.08);
+        }
+        
+        .conference-caption {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .conference-caption h3 {
+            font-size: 1.3rem;
+            color: #1a3a5f;
+            margin-bottom: 8px;
+        }
+        
+        .conference-caption p {
+            color: #666;
+            font-size: 0.95rem;
+            margin-top: 10px;
+        }
+        
+        .event-type {
+            display: inline-block;
+            background: #e3f2ff;
+            color: #1a3a5f;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-top: 5px;
+        }
+        
+        .innovation-section {
+            background: linear-gradient(135deg, #1a3a5f 0%, #2c5a8a 100%);
+            color: white;
+        }
+        
+        .innovation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .innovation-card {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .innovation-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-8px);
+        }
+        
+        .innovation-icon {
+            font-size: 2.5rem;
+            color: #4da6ff;
+            margin-bottom: 20px;
+        }
+        
+        .innovation-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .innovation-card p {
+            color: #e0e0e0;
+            line-height: 1.7;
+        }
+        
+        footer {
+            background: #0f253f;
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: #4da6ff;
+        }
+        
+        .footer-column p {
+            margin-bottom: 15px;
+            color: #ccc;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        
+        .footer-column i {
+            color: #4da6ff;
+            margin-top: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: #4da6ff;
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.95rem;
+        }
+        
+        /* EXPERIENCE CARD DESIGN */
+        .experience-card-section {
+            background: linear-gradient(135deg, #f8fafc 0%, #e6f0ff 100%);
+            padding: 80px 0;
+        }
+        
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .experience-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            border-left: 4px solid #4da6ff;
+        }
+        
+        .experience-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .experience-header {
+            background: linear-gradient(90deg, #1a3a5f 0%, #2c5a8a 100%);
+            color: white;
+            padding: 20px;
+        }
+        
+        .experience-title {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+        
+        .experience-company {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #4da6ff;
+        }
+        
+        .experience-duration {
+            display: block;
+            margin-top: 8px;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .experience-body {
+            padding: 25px;
+            flex-grow: 1;
+        }
+        
+        .experience-body p {
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 0;
+        }
+        
+        .experience-footer {
+            padding: 15px 25px;
+            background: #f8fafc;
+            border-top: 1px solid #eaeff5;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .experience-industry {
+            font-size: 0.9rem;
+            color: #2c5a8a;
+            font-weight: 600;
+        }
+        
+        .experience-icon {
+            color: #4da6ff;
+            font-size: 1.2rem;
+        }
+        
+        /* EDUCATION CARD DESIGN */
+        .education-section {
+            background: linear-gradient(135deg, #e6f0ff 0%, #d9e8ff 100%);
+            padding: 80px 0;
+        }
+        
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .education-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            border-left: 4px solid #4da6ff;
+        }
+        
+        .education-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .education-header {
+            background: linear-gradient(90deg, #1a3a5f 0%, #2c5a8a 100%);
+            color: white;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .education-icon {
+            font-size: 2rem;
+            color: #4da6ff;
+        }
+        
+        .education-title {
+            flex-grow: 1;
+        }
+        
+        .education-title h3 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+        
+        .education-degree {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #4da6ff;
+        }
+        
+        .education-body {
+            padding: 25px;
+            flex-grow: 1;
+        }
+        
+        .education-detail {
+            display: flex;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #f0f5ff;
+        }
+        
+        .education-detail:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .detail-label {
+            width: 120px;
+            font-weight: 600;
+            color: #1a3a5f;
+        }
+        
+        .detail-value {
+            flex-grow: 1;
+            color: #555;
+        }
+        
+        .education-footer {
+            padding: 20px;
+            background: #f8fafc;
+            border-top: 1px solid #eaeff5;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .education-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .skill-badge {
+            background: #e3f2ff;
+            color: #1a3a5f;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        @media (max-width: 992px) {
+            .about-container {
+                flex-direction: column;
+            }
+            
+            .about-image {
+                width: 100%;
+                max-height: 400px;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2.2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 10px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .hero {
+                height: 380px;
+            }
+            
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .experience-grid, .education-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero {
+                height: 340px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+            
+            .quote-box {
+                padding: 15px;
+            }
+            
+            .quote-text {
+                font-size: 1.1rem;
+            }
+            
+            .education-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+            
+            .education-icon {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div class="logo-text">Dr. <span>Bhatnagar</span></div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+                        <li><a href="#education"><i class="fas fa-graduation-cap"></i> Education</a></li>
+                        <li><a href="#experience"><i class="fas fa-briefcase"></i> Experience</a></li>
+                        <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Dr. Rohit Bhatnagar</h1>
+            <p>Pioneering Safety Engineering & Innovation for Over 36 Years</p>
+            
+            <div class="quote-box">
+                <p class="quote-text">"Progressive knowledge must serve practical human safety. Through lifelong learning and innovation, we can build systems that protect both people and critical infrastructure from emerging threats."</p>
+                <p class="quote-author">- Dr. Rohit Bhatnagar</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>Professional Profile</h2>
+                <p>Dr. Rohit Bhatnagar is a distinguished leader with over 36 years of transformative expertise in safety engineering, specializing in lightning protection, CBRN security, and AI-driven automation.</p>
+            </div>
+            <div class="about-container">
+                <div class="about-image">
+                    <img src="assests/Dr.RohitBhatnagar.jpg" alt="Dr. Rohit Bhatnagar">
+                </div>
+                <div class="about-content">
+                    <h3>Pioneering Journey</h3>
+                    <p>In 2001, Dr. Bhatnagar identified critical vulnerabilities in surge protection amid India's rapid electronics adoption. His leadership transformed the company into an industry pioneer, delivering fail-safe lightning/surge mitigation systems that protect critical infrastructure nationwide. Today, his youth-mentored team continues to lead the sector through relentless R&D in safety technologies.</p>
+                    <br>
+                    <p>Dr. Rohit Bhatnagar established Pragati Engineers in 2001 with a vision to provide innovative, reliable, and high-quality engineering solutions. Under his leadership, the company has grown from a small start-up into a trusted name in the field, delivering excellence across projects in safety, security systems, and specialized engineering solutions.</p>
+                    <br>
+                    <p>With over two decades of commitment, Mr. Bhatnagar has been instrumental in building a strong foundation of trust, quality, and customer satisfaction. His forward-thinking approach and dedication to innovation continue to drive Pragati Engineers toward new milestones.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Education & Academic Credentials</h2>
+                <p>Dr. Bhatnagar's academic foundation and professional certifications</p>
+            </div>
+            
+            <div class="education-grid">
+                <div class="education-card">
+                    <div class="education-header">
+                        <i class="fas fa-graduation-cap education-icon"></i>
+                        <div class="education-title">
+                            <h3>Bachelor of Engineering</h3>
+                            <div class="education-degree">Electronics Engineering</div>
+                        </div>
+                    </div>
+                    <div class="education-body">
+                        <div class="education-detail">
+                            <div class="detail-label">Institution:</div>
+                            <div class="detail-value">University of Delhi</div>
+                        </div>
+                        <div class="education-detail">
+                            <div class="detail-label">Duration:</div>
+                            <div class="detail-value">1981 - 1985</div>
+                        </div>
+                        <div class="education-detail">
+                            <div class="detail-label">Focus Areas:</div>
+                            <div class="detail-value">Electronic Circuits, Signal Processing, Control Systems</div>
+                        </div>
+                        <div class="education-detail">
+                            <div class="detail-label">Achievements:</div>
+                            <div class="detail-value">Graduated with Honors, Dean's List</div>
+                        </div>
+                    </div>
+                    <div class="education-footer">
+                        <div class="education-skills">
+                            <span class="skill-badge">Circuit Design</span>
+                            <span class="skill-badge">Signal Processing</span>
+                            <span class="skill-badge">Control Systems</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="education-card">
+                    <div class="education-header">
+                        <i class="fas fa-business-time education-icon"></i>
+                        <div class="education-title">
+                            <h3>Master of Business Administration</h3>
+                            <div class="education-degree">Business Management</div>
+                        </div>
+                    </div>
+                    <div class="education-body">
+                        <div class="education-detail">
+                            <div class="detail-label">Institution:</div>
+                            <div class="detail-value">Indian Institute of Management</div>
+                        </div>
+                        <div class="education-detail">
+                            <div class="detail-label">Duration:</div>
+                            <div class="detail-value">1987 - 1989</div>
+                        </div>
+                        <div class="education-detail">
+                            <div class="detail-label">Specialization:</div>
+                            <div class="detail-value">Technology Management & Entrepreneurship</div>
+                        </div>
+                        <div class="education-detail">
+                            <div class="detail-label">Thesis:</div>
+                            <div class="detail-value">"Innovation Management in High-Tech Industries"</div>
+                        </div>
+                    </div>
+                    <div class="education-footer">
+                        <div class="education-skills">
+                            <span class="skill-badge">Strategic Management</span>
+                            <span class="skill-badge">Entrepreneurship</span>
+                            <span class="skill-badge">Tech Innovation</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="education-card">
+                    <div class="education-header">
+                        <i class="fas fa-medal education-icon"></i>
+                        <div class="education-title">
+                            <h3>Professional Development</h3>
+                            <div class="education-degree">Specialized Certifications</div>
+                        </div>
+                    </div>
+                    <div class="education-body">
+                        <div class="education-detail">
+                            <div class="detail-label">Doctorate (DPE):</div>
+                            <div class="detail-value">Professional Entrepreneurship, European Continental University</div>
+                        </div>
+                        <div class="education-detail">
+                            <div class="detail-label">Fellowship (GEEF):</div>
+                            <div class="detail-value">Golden Excellence Entrepreneurial Fellowship, UK Association</div>
+                        </div>
+                        <div class="education-detail">
+                            <div class="detail-label">Lightning Protection:</div>
+                            <div class="detail-value">Advanced Certification, International Lightning Protection Institute</div>
+                        </div>
+                        <div class="education-detail">
+                            <div class="detail-label">CBRN Security:</div>
+                            <div class="detail-value">Master Certification, Global Safety Council</div>
+                        </div>
+                    </div>
+                    <div class="education-footer">
+                        <div class="education-skills">
+                            <span class="skill-badge">Entrepreneurship</span>
+                            <span class="skill-badge">Safety Engineering</span>
+                            <span class="skill-badge">Leadership</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Experience Section - Card Design -->
+    <section id="experience" class="experience-card-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Professional Experience</h2>
+                <p>A distinguished career spanning over three decades in engineering and leadership</p>
+            </div>
+            
+            <div class="experience-grid">
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <h3 class="experience-title">Manager</h3>
+                        <div class="experience-company">Alstom Power</div>
+                        <span class="experience-duration">Apr 1989 - Jul 1993 · 4 yrs 4 mos</span>
+                    </div>
+                    <div class="experience-body">
+                        <p>Executed Power & Process Plants Projects, demonstrating expertise in large-scale engineering implementations and project management. Managed complex installations while ensuring compliance with safety regulations and quality standards.</p>
+                    </div>
+                    <div class="experience-footer">
+                        <span class="experience-industry">Energy & Infrastructure</span>
+                        <i class="fas fa-industry experience-icon"></i>
+                    </div>
+                </div>
+                
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <h3 class="experience-title">Regional Manager</h3>
+                        <div class="experience-company">Siemens</div>
+                        <span class="experience-duration">Jun 1993 - Feb 2001 · 7 yrs 9 mos</span>
+                    </div>
+                    <div class="experience-body">
+                        <p>Managed marketing and development of building management systems and electronic security systems. Oversaw team finance and project development, demonstrating strong leadership and strategic planning skills. Pioneered innovative safety solutions for commercial and industrial applications.</p>
+                    </div>
+                    <div class="experience-footer">
+                        <span class="experience-industry">Technology & Security</span>
+                        <i class="fas fa-microchip experience-icon"></i>
+                    </div>
+                </div>
+                
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <h3 class="experience-title">Managing Director</h3>
+                        <div class="experience-company">Pragati Engineers</div>
+                        <span class="experience-duration">Sep 2001 - Present · 24 Years</span>
+                    </div>
+                    <div class="experience-body">
+                        <p>Responsible for all projects at Pan India Level related to Security Fire Systems, Sound Reinforcement Systems, Lightning & Surge Protection Systems, CCTV Systems, Stage Lighting, and Acoustic work. Led the transformation into an industry pioneer in safety engineering. Developed cutting-edge solutions that protect critical infrastructure nationwide.</p>
+                    </div>
+                    <div class="experience-footer">
+                        <span class="experience-industry">Safety Engineering & Innovation</span>
+                        <i class="fas fa-shield-alt experience-icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section style="background: linear-gradient(135deg, #e6f0ff 0%, #d9e8ff 100%);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Academic Credentials & Leadership</h2>
+                <p>Dr. Bhatnagar champions lifelong blended learning, holding globally recognized credentials from prestigious institutions.</p>
+            </div>
+            
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <div class="card-header">
+                        <i class="fas fa-graduation-cap card-icon"></i>
+                        <h3>Doctorate of Professional Entrepreneurship (DPE)</h3>
+                    </div>
+                    <div class="card-body">
+                        <p><strong>Field:</strong> Business Management</p>
+                        <p><strong>Institution:</strong> European Continental University, USA</p>
+                        <p><strong>Awarded:</strong> November 2024</p>
+                        <p><strong>Accreditation:</strong> Delaware State Registered (Auth. No. 3014155)</p>
+                    </div>
+                    <div class="card-footer">
+                        Academic Achievement | Global Learning Recognition
+                    </div>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="card-header">
+                        <i class="fas fa-medal card-icon"></i>
+                        <h3>Golden Excellence Entrepreneurial Fellowship (GEEF)</h3>
+                    </div>
+                    <div class="card-body">
+                        <p><strong>Field:</strong> Business Management</p>
+                        <p><strong>Institution:</strong> UK Association of Lifelong Learning</p>
+                        <p><strong>Awarded:</strong> November 2024</p>
+                       
+                    </div>
+                    <div class="card-footer">
+                        Professional Development | Entrepreneurial Education
+                    </div>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="card-header">
+                        <i class="fas fa-briefcase card-icon"></i>
+                        <h3>Leadership & Affiliations</h3>
+                    </div>
+                    <div class="card-body">
+                        <p><strong>President</strong> - Lightning Protection Association of India</p>
+                        <p><strong>President</strong> - Specialized Professional Association of India</p>
+                        <p><strong>Senior Vice President</strong> - Akhil Bharatiya Kayastha Mahasabha</p>
+                        <p><strong>Director</strong> - BharatTech.AI Pvt. Ltd</p>
+                        <p><strong>Director</strong> - Indo Africa Consultants Pvt. Ltd</p>
+                    </div>
+                    <div class="card-footer">
+                        Industry Leadership | Safety Standards Development
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training in Taiwan Section -->
+    <section id="training" class="gallery-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Training in Taiwan</h2>
+                <p>International knowledge exchange and specialized training programs</p>
+            </div>
+            
+            <div class="gallery-container">
+                <div class="gallery-card">
+                    <div class="gallery-image">
+                        <img src="assests/Taiwan1.jpg" alt="Taiwan Lightning Protection Training">
+                    </div>
+                    <div class="gallery-content">
+                        <h3>Strengthening Bonds Through Team Collaboration and Training</h3>
+                        <p>Capturing moments of teamwork, knowledge sharing, and hands-on learning that strengthened our professional bond.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-card">
+                    <div class="gallery-image">
+                        <img src="assests/Taiwan2.jpg" alt="Industrial Safety Training">
+                    </div>
+                    <div class="gallery-content">
+                        <h3>Training for BXB Related Conference System</h3>
+                        <p> Hands-on training with advanced BXB conference solutions for seamless communication.</p>
+                    </div>
+                </div>
+                
+                
+                
+                <div class="gallery-card">
+                    <div class="gallery-image">
+                        <img src="assests/Taiwan4.jpg" alt="Technical Exchange Program">
+                    </div>
+                    <div class="gallery-content">
+                        <h3>Technical Exchange Program</h3>
+                        <p>Collaborated with Taiwanese engineers on advanced surge protection technologies, establishing ongoing knowledge exchange between Indian and Taiwanese safety experts.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training in Thailand Section -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Training in Thailand</h2>
+                <p>Regional safety training initiatives and knowledge sharing</p>
+            </div>
+            
+            <div class="gallery-container">
+                <div class="gallery-card">
+                    <div class="gallery-image">
+                        <img src="assests/Thiland1.jpg" alt="Thailand Lightning Protection">
+                    </div>
+                    <div class="gallery-content">
+                        <h3> Conference System</h3>
+                        <p>Modern conference solutions designed for effective discussions and decision-making.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-card">
+                    <div class="gallery-image">
+                        <img src="assests/Thailand.jpg" alt="Hospitality Safety Training">
+                    </div>
+                    <div class="gallery-content">
+                        <h3>Smart Voting System</h3>
+                        <p>Secure and efficient digital voting technology for transparent results.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-card">
+                    <div class="gallery-image">
+                        <img src="assests/Thailand3.jpg" alt="AI Safety Workshop">
+                    </div>
+                    <div class="gallery-content">
+                        <h3>Video Conference and DIS</h3>
+                        <p>High-quality video conferencing with DIS integration for global connectivity.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Updated Team Pragati Section -->
+    <section id="team">
+        <div class="container">
+            <div class="section-header">
+                <h2>Conferences & Celebrations</h2>
+                <p>Memorable moments from our professional gatherings and team celebrations</p>
+            </div>
+            
+            <div class="conference-gallery">
+                <div class="conference-card">
+                    <div class="conference-image">
+                        <img src="https://images.unsplash.com/photo-1531545514256-b1400bc00f31?q=80&w=1974" alt="Industry Conference">
+                    </div>
+                    <div class="conference-caption">
+                        <h3>National Safety Conference 2023</h3>
+                        <p>Dr. Bhatnagar presenting our latest lightning protection research</p>
+                        <span class="event-type">Conference</span>
+                    </div>
+                </div>
+                
+                <div class="conference-card">
+                    <div class="conference-image">
+                        <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=2069" alt="Team Celebration">
+                    </div>
+                    <div class="conference-caption">
+                        <h3>Project Success Celebration</h3>
+                        <p>Team celebrating the completion of major infrastructure safety project</p>
+                        <span class="event-type">Celebration</span>
+                    </div>
+                </div>
+                
+                <div class="conference-card">
+                    <div class="conference-image">
+                        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=2070" alt="Technical Workshop">
+                    </div>
+                    <div class="conference-caption">
+                        <h3>Technical Workshop</h3>
+                        <p>Hands-on training session for new safety engineers</p>
+                        <span class="event-type">Workshop</span>
+                    </div>
+                </div>
+                
+                <div class="conference-card">
+                    <div class="conference-image">
+                        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2070" alt="Awards Ceremony">
+                    </div>
+                    <div class="conference-caption">
+                        <h3>Industry Excellence Awards</h3>
+                        <p>Receiving the Safety Innovation Award for breakthrough technology</p>
+                        <span class="event-type">Awards</span>
+                    </div>
+                </div>
+                
+                <div class="conference-card">
+                    <div class="conference-image">
+                        <img src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?q=80&w=2070" alt="Team Building">
+                    </div>
+                    <div class="conference-caption">
+                        <h3>Team Building Retreat</h3>
+                        <p>Annual team retreat focusing on collaboration and innovation</p>
+                        <span class="event-type">Celebration</span>
+                    </div>
+                </div>
+                
+                <div class="conference-card">
+                    <div class="conference-image">
+                        <img src="https://images.unsplash.com/photo-1431540015161-0bf868a2d407?q=80&w=2070" alt="International Summit">
+                    </div>
+                    <div class="conference-caption">
+                        <h3>Global Safety Summit</h3>
+                        <p>Representing India at the International Safety Engineering Conference</p>
+                        <span class="event-type">Conference</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Innovation Section -->
+    <section class="innovation-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 style="color: white;">Entrepreneurship & Innovations</h2>
+                <p>Pioneering safety systems that protect critical infrastructure worldwide</p>
+            </div>
+            
+            <div class="innovation-grid">
+                <div class="innovation-card">
+                    <i class="fas fa-bolt innovation-icon"></i>
+                    <h3>Advanced Lightning Protection</h3>
+                    <p>Comprehensive solutions protecting critical infrastructure from electrical surges and lightning strikes with fail-safe implementation and continuous monitoring systems.</p>
+                </div>
+                
+                <div class="innovation-card">
+                    <i class="fas fa-radiation innovation-icon"></i>
+                    <h3>CBRN Security Systems</h3>
+                    <p>Cutting-edge Chemical, Biological, Radiological and Nuclear threat detection and mitigation technologies for government and high-security facilities.</p>
+                </div>
+                
+                <div class="innovation-card">
+                    <i class="fas fa-robot innovation-icon"></i>
+                    <h3>AI-Driven Safety Automation</h3>
+                    <p>Intelligent systems that predict and prevent safety hazards in industrial environments through machine learning and real-time monitoring.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>About Dr. Bhatnagar</h3>
+                    <p>Renowned safety engineering expert with over 36 years of experience developing cutting-edge protection systems for critical infrastructure worldwide.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Safety Engineering Headquarters, Delhi, India</p>
+                    <p><i class="fas fa-phone"></i> +91 9810529459</p>
+                    <p><i class="fas fa-envelope"></i> md@pragatiengineers.org</p>
+                    <p><i class="fas fa-globe"></i>www.pragatiengineers.co.in</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Specializations</h3>
+                    <p><i class="fas fa-bolt"></i> Lightning Protection Systems</p>
+                    <p><i class="fas fa-radiation"></i> CBRN Security Solutions</p>
+                    <p><i class="fas fa-robot"></i> AI-Driven Safety Automation</p>
+                    <p><i class="fas fa-hard-hat"></i> Industrial Safety Implementation</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Dr. Rohit Bhatnagar & Team Pragati. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Animation for timeline items
+        const timelineItems = document.querySelectorAll('.timeline-item, .experience-card, .education-card');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateX(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        timelineItems.forEach(item => {
+            item.style.opacity = 0;
+            item.style.transform = 'translateX(-20px)';
+            item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(item);
+        });
+        
+        // Animation for achievement cards
+        const achievementCards = document.querySelectorAll('.achievement-card, .gallery-card, .conference-card, .innovation-card');
+        
+        const cardObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        achievementCards.forEach(card => {
+            card.style.opacity = 0;
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            cardObserver.observe(card);
+        });
+    </script>
+</body>
+</html>

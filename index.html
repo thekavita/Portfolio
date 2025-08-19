@@ -1,0 +1,1415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pragati Engineers - Integrated Technology & Safety Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary-black: #000000;
+            --secondary-black: #333333;
+            --accent-green: #2e7d32;
+            --light-gray: #f5f5f5;
+            --medium-gray: #e0e0e0;
+            --white: #ffffff;
+            --transition: all 0.3s ease;
+        }
+        
+        body {
+            background-color: var(--white);
+            color: var(--primary-black);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-weight: 700;
+            color: var(--primary-black);
+            line-height: 1.2;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: var(--accent-green);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background: var(--accent-green);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: var(--transition);
+            border: 2px solid var(--primary-black);
+            font-size: 1rem;
+        }
+        
+        .btn:hover {
+            background: transparent;
+            color: var(--primary-black);
+            transform: translateY(-3px);
+        }
+        
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 15px 0;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 45px;
+        }
+        
+        nav {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        nav ul li {
+            margin: 0 12px;
+            position: relative;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--primary-black);
+            font-weight: 600;
+            font-size: 15px;
+            padding: 8px 5px;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent-green);
+        }
+        
+        .dropdown {
+            position: relative;
+        }
+        
+        .dropdown-content {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--white);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            min-width: 180px;
+            display: none;
+            z-index: 1;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .dropdown-content a {
+            display: block;
+            padding: 12px 15px;
+            border-bottom: 1px solid var(--medium-gray);
+            font-size: 14px;
+            color: var(--primary-black);
+        }
+        
+        .dropdown-content a:hover {
+            background: var(--light-gray);
+            color: var(--accent-green);
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary-black);
+        }
+        
+        /* Home Section */
+        #home {
+            padding-top: 120px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: var(--white); /* Changed from gradient to pure white */
+        }
+        
+        .home-content {
+            display: flex;
+            align-items: center;
+        }
+        
+        .home-text {
+            flex: 1;
+            padding-right: 50px;
+        }
+        
+        .home-text h1 {
+            font-size: 3.0rem;
+            margin-bottom: 25px;
+            line-height: 1.2;
+            color: var(--accent-green);
+        }
+        
+        .home-text p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: var(--secondary-black);
+        }
+        
+        .home-image {
+            flex: 1;
+            text-align: center;
+            position: relative;
+        }
+        
+        .home-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            /* Add floating animation */
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        /* Floating animation keyframes */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        /* About Section */
+        #about {
+            background-color: var(--light-gray);
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+        
+        .about-image {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .about-image img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .about-text p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: var(--secondary-black);
+        }
+        
+        .values-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .value-box {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            height: 350px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .value-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: var(--transition);
+            z-index: -1;
+        }
+        
+        .vision-box::before {
+            background-image: url('https://images.unsplash.com/photo-1463171379579-3fdfb86d6285?auto=format&fit=crop&w=600');
+        }
+        
+        .mission-box::before {
+            background-image: url('https://images.unsplash.com/photo-1474631245212-32dc3c8310c6?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8b3VyJTIwbWlzc2lvbnxlbnwwfHwwfHx8MA%3D%3D');
+        }
+        
+        .approach-box::before {
+            background-image: url('https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=600');
+        }
+        
+        .value-box:hover::before {
+            opacity: 0.5;
+        }
+        
+        .value-box h4 {
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+        }
+        
+        .value-box p {
+            font-size: 1rem;
+            color: var(--secondary-black);
+        }
+        
+        /* Services Section */
+        .services-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .tab-btn {
+            padding: 14px 32px;
+            background: var(--light-gray);
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+        
+        .tab-btn.active {
+            background: var(--primary-black);
+            color: var(--white);
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-img {
+            height: 220px;
+            overflow: hidden;
+        }
+        
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .service-card:hover .service-img img {
+            transform: scale(1.05);
+        }
+        
+        .service-content {
+            padding: 30px;
+        }
+        
+        .service-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .service-content p {
+            margin-bottom: 20px;
+            color: var(--secondary-black);
+        }
+        
+        /* Presence Section */
+        #presence {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/1600857062241-98e1d616747d') center/cover;
+            color: var(--white);
+            text-align: center;
+        }
+        
+        #presence .section-title h2 {
+            color: var(--white);
+        }
+        
+        .presence-content {
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+        
+        .presence-content p {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+        
+        .map-container {
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        .map-container img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        
+        /* History Section */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .history-text h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .history-text p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: var(--secondary-black);
+        }
+        
+        /* Fixed Client Section - 6 logos per row */
+        #clients {
+            background-color: var(--light-gray);
+            padding: 80px 0;
+        }
+        
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr); /* Fixed 6 columns */
+            gap: 25px;
+            justify-content: center;
+        }
+        
+        /* Client logo styling with rounded circle effect */
+        .client-logo {
+            background: var(--white);
+            border-radius: 50%; /* Changed to circle */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 140px;
+            width: 140px; /* Fixed width for circle */
+            margin: 0 auto; /* Center the circle */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            border: 1px solid var(--medium-gray);
+            padding: 15px; /* Adjusted padding */
+            overflow: hidden; /* Ensure image stays within circle */
+        }
+        
+        .client-logo:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            border-color: var(--accent-green);
+        }
+        
+        .client-logo img {
+            max-width: 90%; /* Slightly smaller to fit circle */
+            max-height: 80px;
+            filter: grayscale(100%);
+            transition: var(--transition);
+            object-fit: contain; /* Maintain aspect ratio */
+        }
+        
+        .client-logo:hover img {
+            filter: grayscale(0);
+        }
+        
+        /* Careers Section */
+        #careers {
+            background-color: var(--light-gray);
+        }
+        
+        .careers-container {
+            display: flex;
+            gap: 50px;
+        }
+        
+        .careers-text {
+            flex: 1;
+        }
+        
+        .careers-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .careers-text p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: var(--secondary-black);
+        }
+        
+        .careers-form {
+            flex: 1;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid var(--medium-gray);
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--accent-green);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.1);
+        }
+        
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+        
+        /* Contact Section */
+        #contact {
+            background-color: var(--white);
+        }
+        
+        .contact-container {
+            display: flex;
+            gap: 50px;
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-details {
+            margin-top: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            margin-bottom: 30px;
+            align-items: flex-start;
+        }
+        
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-black);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        .contact-text h4 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+        }
+        
+        .contact-text p {
+            color: var(--secondary-black);
+        }
+        
+        .contact-form {
+            flex: 1;
+            background: var(--light-gray);
+            padding: 40px;
+            border-radius: 10px;
+        }
+        
+        .contact-form h3 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary-black);
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+            color: var(--white);
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--accent-green);
+        }
+        
+        .footer-col p {
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-col ul li a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-block;
+        }
+        
+        .footer-col ul li a:hover {
+            color: var(--white);
+            transform: translateX(5px);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            width: 42px;
+            height: 42px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            transition: var(--transition);
+            text-decoration: none;
+        }
+        
+        .social-links a:hover {
+            background: var(--accent-green);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 50px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .clients-grid {
+                grid-template-columns: repeat(4, 1fr); /* 4 columns for medium screens */
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .home-content,
+            .about-content,
+            .careers-container,
+            .contact-container {
+                flex-direction: column;
+            }
+            
+            .home-text {
+                padding-right: 0;
+                margin-bottom: 50px;
+            }
+            
+            .values-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .home-text h1 {
+                font-size: 2.8rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 90px;
+                left: -100%;
+                flex-direction: column;
+                background: var(--white);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+                padding: 20px 0;
+            }
+            
+            nav ul.active {
+                left: 0;
+            }
+            
+            nav ul li {
+                margin: 15px 0;
+            }
+            
+            .dropdown-content {
+                position: static;
+                display: none;
+                box-shadow: none;
+                width: 100%;
+                text-align: center;
+            }
+            
+            .dropdown:hover .dropdown-content {
+                display: none;
+            }
+            
+            .dropdown.active .dropdown-content {
+                display: block;
+            }
+            
+            .values-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .home-text h1 {
+                font-size: 2.4rem;
+            }
+            
+            .clients-grid {
+                grid-template-columns: repeat(3, 1fr); /* 3 columns for tablets */
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .home-text h1 {
+                font-size: 2rem;
+            }
+            
+            nav ul li a {
+                font-size: 14px;
+            }
+            
+            .clients-grid {
+                grid-template-columns: repeat(2, 1fr); /* 2 columns for phones */
+            }
+            
+            .client-logo {
+                height: 120px;
+                width: 120px; /* Adjusted for mobile */
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo">
+                <img src="assests/logo.png" alt="Pragati Engineers Logo">
+            </div>
+            
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li class="dropdown">
+                        <a href="#services">Services <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="#cctv-av">CCTV & AV Systems</a>
+                            <a href="#dms">Disaster Management</a>
+                        </div>
+                    </li>
+                    <li><a href="#presence">Our Presence</a></li>
+                    <li><a href="#history">History</a></li>
+                    <li><a href="#clients">Clients</a></li>
+                    <li><a href="#careers">Career</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+            
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="container home-content">
+            <div class="home-text">
+                <h1>PRAGATI ENGINEERS Inspiring Perfection</h1>
+                <p>Welcome to Pragati Engineers Integrated Technology & Safety Solutions. Pragati Engineers is a leading solution provider in the fields of CCTV Surveillance, Audio-Video Systems, Conference & Communication Solutions, Lightning Protection Systems, and CBRN (Chemical, Biological, Radiological, and Nuclear) Safety. We also offer specialized expertise in Disaster Management Solutions, catering to both government and private sector projects. With a commitment to innovation, reliability, and on-time delivery, we provide end-to-end services — from system design and supply to installation and commissioning — ensuring robust and future-ready solutions.</p>
+                <a href="#contact" class="btn">Get in Touch</a>
+            </div>
+            <div class="home-image">
+                <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?auto=format&fit=crop&w=800&q=80" alt="Technology Solutions">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Us</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="assests/About.avif" alt="Dr. Rohit Bhatnagar">
+                </div>
+                <div class="about-text">
+                    <h3>Driven by Vision. Powered by Expertise.</h3>
+                    <p>Founded in 2001 by Dr. Rohit Bhatnagar, Pragati Engineers is a trusted name in delivering innovative, high-quality, and time-bound engineering solutions. With two decades of excellence, we specialize in CCTV Surveillance, AV Systems, Lightning Protection, CBRN Safety, and Disaster Management.</p>
+                    <p>Backed by a skilled team of engineers and project experts, we ensure end-to-end execution — from design to integration. Our commitment lies in building safe, smart, and secure infrastructure with unmatched quality and reliability.</p>
+                    <p>At Pragati Engineers, we don’t just deliver systems — we deliver lasting solutions.</p>
+                </div>
+            </div>
+            <div class="values-container">
+                <div class="value-box vision-box">
+                    <h4>Our Vision</h4>
+                    <p>To be a trusted leader in delivering smart, secure, and sustainable technology solutions. We strive to create safer environments through innovation, reliability, and technical excellence.</p>
+                </div>
+                <div class="value-box mission-box">
+                    <h4>Our Mission</h4>
+                    <p>To provide reliable, high-quality solutions in surveillance, safety, and communication systems with a focus on innovation, efficiency, and client satisfaction.</p>
+                </div>
+                <div class="value-box approach-box">
+                    <h4>Our Approach</h4>
+                    <p>We understand, design, and deliver customized solutions with precision — backed by an experienced team and a commitment to long-term support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+            </div>
+            <div class="services-tabs">
+                <button class="tab-btn active" data-tab="cctv-av">CCTV & AV Systems</button>
+                <button class="tab-btn" data-tab="dms">Disaster Management</button>
+            </div>
+            
+            <!-- CCTV & AV Systems -->
+            <div id="cctv-av" class="tab-content active">
+                <div class="service-intro text-center" style="max-width: 800px; margin: 0 auto 50px;">
+                    <h3>Technology & Communication Solutions</h3>
+                    <p>At Pragati Engineers, we deliver advanced technology solutions that empower smarter communication, stronger security, and more connected environments.</p>
+                </div>
+                <div class="service-grid">
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="https://images.unsplash.com/photo-1585123334904-845d60e97b29?auto=format&fit=crop&w=600&q=80" alt="CCTV Surveillance Systems">
+                        </div>
+                        <div class="service-content">
+                            <h3>CCTV Surveillance Systems</h3>
+                            <p>State-of-the-art surveillance solutions designed for real-time monitoring, deterrence, and incident analysis. We provide complete end-to-end integration for high-security environments.</p>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="https://images.unsplash.com/photo-1632582204758-5ac65783517a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fEF1ZGlvJTIwdmlzdWFsJTIwc3lzdGVtfGVufDB8fDB8fHww" alt="Audio Visual Systems">
+                        </div>
+                        <div class="service-content">
+                            <h3>Audio Visual Systems</h3>
+                            <p>Immersive and reliable AV setups for corporate, government, and public spaces — delivering clarity, control, and seamless interaction in every setting.</p>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="assests/Confernce system.jpg" alt="Conference Systems">
+                        </div>
+                        <div class="service-content">
+                            <h3>Conference Systems</h3>
+                            <p>Modern wired and wireless conferencing solutions for secure, high-quality communication in boardrooms, training halls, and control centres.</p>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600&q=80" alt="IT & Software Solutions">
+                        </div>
+                        <div class="service-content">
+                            <h3>IT & Software Solutions</h3>
+                            <p>Tailored IT infrastructure and custom software development services that support secure networking, system integration, automation, and operational efficiency.</p>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=600&q=80" alt="Smart Education Solutions">
+                        </div>
+                        <div class="service-content">
+                            <h3>Smart Education Solutions</h3>
+                            <p>Interactive classroom technology that enhances digital learning experiences and boosts engagement through smart boards, content delivery tools, and remote learning platforms.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disaster Management -->
+            <div id="dms" class="tab-content">
+                <div class="service-intro text-center" style="max-width: 800px; margin: 0 auto 50px;">
+                    <h3>Safety, Disaster Management & Infrastructure Systems</h3>
+                    <p>Our solutions are designed to protect lives, critical infrastructure, and operations from natural and man-made disasters through proactive technologies and intelligent systems.</p>
+                </div>
+                <div class="service-grid">
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=600&q=80" alt="CBRN Safety Solutions">
+                        </div>
+                        <div class="service-content">
+                            <h3>CBRN Safety Solutions</h3>
+                            <p>Specialized in high-stakes environments, we deploy solutions to detect, contain, and respond to Chemical, Biological, Radiological, and Nuclear incidents. These systems meet national and international safety protocols.</p>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="https://images.unsplash.com/photo-1506259091721-347e791bab0f?auto=format&fit=crop&w=600&q=80" alt="Early Earthquake Warning Systems">
+                        </div>
+                        <div class="service-content">
+                            <h3>Early Earthquake Warning Systems</h3>
+                            <p>We provide fast-acting seismic sensors and automated alert systems that give critical seconds of advance warning — enabling timely evacuation and activation of safety protocols.</p>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="https://images.unsplash.com/photo-1560258018-c7db7645254e?auto=format&fit=crop&w=600&q=80" alt="Lightning Protection Systems">
+                        </div>
+                        <div class="service-content">
+                            <h3>Lightning Protection Systems</h3>
+                            <p>Engineered to international standards, our lightning protection systems are designed to shield buildings, equipment, and personnel from the devastating effects of lightning strikes.</p>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="https://images.unsplash.com/photo-1556020685-ae41abfc9365?auto=format&fit=crop&w=600&q=80" alt="Building Management Systems">
+                        </div>
+                        <div class="service-content">
+                            <h3>Building Management Systems (BMS)</h3>
+                            <p>Our intelligent BMS solutions integrate HVAC, lighting, fire safety, and security systems into one centralized platform — reducing energy use, enhancing comfort, and improving facility control.</p>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="assests/Suppression.jfif" alt="Fire Suppression Systems">
+                        </div>
+                        <div class="service-content">
+                            <h3>Fire Suppression Systems</h3>
+                            <p>Expert design, installation & maintenance of advanced fire suppression systems (gas, foam, water mist, sprinklers) tailored to your facility.</p>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="assests/Fire.jfif" alt="Advanced Fire & Smoke Detection">
+                        </div>
+                        <div class="service-content">
+                            <h3>Advanced Fire & Smoke Detection</h3>
+                            <p>We design, install, and maintain cutting-edge detection systems (addressable, conventional, aspirating) for rapid, reliable early warning.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Presence Section -->
+    <section id="presence">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Presence</h2>
+            </div>
+            <div class="presence-content">
+                <p>Delivering Nationwide with Commitment and Excellence</p>
+                <p>At Pragati Engineers, our footprint spans across multiple states and regions in India. With a strong presence in both metropolitan and remote areas, we have successfully executed projects in diverse environments — from government buildings and defense establishments to smart campuses and infrastructure hubs.</p>
+                <p>Our ability to mobilize resources quickly, deploy skilled teams, and deliver customized solutions has allowed us to serve clients across the country with consistency and quality.</p>
+                <p><strong>No matter the location — we bring expertise, efficiency, and excellence to every project.</strong></p>
+            </div>
+            <div class="map-container">
+                <img src="assests/MAP.png" alt="India Map">
+            </div>
+        </div>
+    </section>
+
+    <!-- History Section -->
+    <section id="history">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our History</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="assests/Dr.RohitBhatnagar.jpg" alt="Dr. Rohit Bhatnagar">
+                </div>
+                <div class="about-text history-text">
+                    <h3>Dr. Rohit Bhatnagar - Managing Director</h3>
+                    <p>"I am Dr. Rohit Bhatnagar, with international and Indian experience of more than 36 years in various capacities and fields within respectable organizations."</p>
+                    <p>Under Dr. Bhatnagar's leadership, Pragati Engineers has grown from a startup to a nationally recognized provider of integrated technology and safety solutions. His vision for innovation and commitment to excellence has positioned our company as a trusted partner for both government and private sector projects across India.</p>
+                    <a href="history.html" target="_blank" class="btn">View Full History & Gallery</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section with Fixed Layout -->
+    <section id="clients">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Clients</h2>
+                <p>Trusted by India's Leading Government Institutions</p>
+            </div>
+            <p class="text-center" style="max-width: 800px; margin: 0 auto 40px;">
+                At Pragati Engineers, we are proud to be a trusted partner to some of the most respected government bodies and public sector organizations in India.
+            </p>
+            
+            <div class="clients-grid">
+                <!-- Row 1 - 6 logos -->
+                <div class="client-logo"><img src="assests/AIIMS1.jfif" alt="Client 1"></div>
+                <div class="client-logo"><img src="assests/Air force2.jfif" alt="Client 2"></div>
+                <div class="client-logo"><img src="assests/Assam Rifles3.png" alt="Client 3"></div>
+                <div class="client-logo"><img src="assests/BSNL4.jfif" alt="Client 4"></div>
+                <div class="client-logo"><img src="assests/CPWD5.jfif" alt="Client 5"></div>
+                <div class="client-logo"><img src="assests/delhi high court6.jfif" alt="Client 6"></div>
+                
+                <!-- Row 2 - 6 logos -->
+                <div class="client-logo"><img src="assests/DP7.png" alt="Client 7"></div>
+                <div class="client-logo"><img src="assests/DU8.jfif" alt="Client 8"></div>
+                <div class="client-logo"><img src="assests/ICMR9.png" alt="Client 9"></div>
+                <div class="client-logo"><img src="assests/JNU10.jfif" alt="Client 10"></div>
+                <div class="client-logo"><img src="assests/NDMC11.png" alt="Client 11"></div>
+                <div class="client-logo"><img src="assests/PWD12.png" alt="Client 12"></div>
+                 
+                <!-- Row 3 - 6 logos -->
+                <div class="client-logo"><img src="assests/Railway13.png" alt="Client 13"></div>
+                <div class="client-logo"><img src="assests/TCIL14.jfif" alt="Client 14"></div>
+                <div class="client-logo"><img src="assests/NCB15.png" alt="Client 15"></div>
+                <div class="client-logo"><img src="assests/NSSTA16.png" alt="Client 16"></div>
+                <div class="client-logo"><img src="assests/NTPC17.png" alt="Client 17"></div>
+                <div class="client-logo"><img src="assests/Parliment house18.png" alt="Client 18"></div>
+                <div class="client-logo"><img src="assests/BHU19.png" alt="Client 19"></div>
+                 <div class="client-logo"><img src="assests/Immigration20.jfif" alt="Client 20"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Careers Section -->
+    <section id="careers">
+        <div class="container">
+            <div class="section-title">
+                <h2>Careers</h2>
+            </div>
+            <div class="careers-container">
+                <div class="careers-text">
+                    <h3>Build Your Future with Innovation and Purpose</h3>
+                    <p>At Pragati Engineers, we believe our people are the foundation of our success. We are always looking for dedicated, skilled, and motivated individuals who are ready to contribute to impactful projects in safety, security, and system integration.</p>
+                    <p>We offer a collaborative and supportive work environment where professionalism, learning, and growth are encouraged at every level. Join us to be part of a team that values integrity, quality, and commitment in every project we undertake.</p>
+                    <h4>Interested in Joining Us?</h4>
+                    <p>Send your resume to <a href="mailto:info@pragatiengineers.org">Info@pragatiengineers.org</a></p>
+                    <p>Or fill out the form below and our HR team will get in touch with you.</p>
+                </div>
+                <div class="careers-form">
+                    <h3>Application Form</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="position">Position Interested In</label>
+                            <select id="position" required>
+                                <option value="">Select a position</option>
+                                <option value="engineer">Tender Executive</option>
+                                <option value="designer">Admin Assistant  </option>
+                                <option value="manager">Accountant</option>
+                                <option value="tech">Field Technician</option>
+                                <option value="sales">Sales Executive</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Cover Letter</label>
+                            <textarea id="message" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="resume">Upload Resume</label>
+                            <input type="file" id="resume" accept=".pdf,.doc,.docx">
+                        </div>
+                        <button type="submit" class="btn">Submit Application</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>We're Here to Help You</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <p>Have a question, need support, or looking to discuss a project? Reach out to us — the team at Pragati Engineers is ready to assist you with expert guidance and timely responses.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Office Address</h4>
+                                <p>Pragati Engineers<br>271, Bhatnagar House, GTB Nagar<br>Dhaka, Delhi – 110009, India</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Phone</h4>
+                                <p>+91 95822 15457<br>011-41055314</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <p>sales@pragatiengineers.org</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Send us a Message</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="contact-name">Your Name</label>
+                            <input type="text" id="contact-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-email">Email Address</label>
+                            <input type="email" id="contact-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-subject">Subject</label>
+                            <input type="text" id="contact-subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-message">Message</label>
+                            <textarea id="contact-message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-col">
+                <h3>Pragati Engineers</h3>
+                <p>Inspiring perfection through innovative technology and safety solutions since 2001.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#presence">Our Presence</a></li>
+                    <li><a href="#history">History</a></li>
+                    <li><a href="#clients">Clients</a></li>
+                    <li><a href="#careers">Careers</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Our Services</h3>
+                <ul>
+                    <li><a href="#cctv-av">CCTV & AV Systems</a></li>
+                    <li><a href="#dms">Disaster Management</a></li>
+                    <li><a href="#services">Conference Systems</a></li>
+                    <li><a href="#services">Lightning Protection</a></li>
+                    <li><a href="#services">CBRN Safety Solutions</a></li>
+                    <li><a href="#services">Building Management</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Info</h3>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> 271, Bhatnagar House, GTB Nagar, Delhi</li>
+                    <li><i class="fas fa-phone-alt"></i> +91 95822 15457</li>
+                    <li><i class="fas fa-envelope"></i> sales@pragatiengineers.org</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 Pragati Engineers. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('nav ul');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            
+            // Toggle dropdowns for mobile
+            document.querySelectorAll('.dropdown').forEach(dropdown => {
+                if (navMenu.classList.contains('active')) {
+                    dropdown.classList.add('active');
+                } else {
+                    dropdown.classList.remove('active');
+                }
+            });
+        });
+        
+        // Services Tabs
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons and contents
+                tabBtns.forEach(b => b.classList.remove('active'));
+                tabContents.forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                // Show corresponding content
+                const tabId = btn.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+        
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    navMenu.classList.remove('active');
+                }
+            });
+        });
+        
+        // Form Submission Handling
+        const forms = document.querySelectorAll('form');
+        forms.forEach(form => {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your submission! We will contact you soon.');
+                form.reset();
+            });
+        });
+        
+        // Auto-adjust navigation font size
+        function adjustNavFontSize() {
+            const nav = document.querySelector('nav ul');
+            const navItems = document.querySelectorAll('nav ul li');
+            let totalWidth = 0;
+            
+            navItems.forEach(item => {
+                totalWidth += item.offsetWidth;
+            });
+            
+            const navWidth = nav.offsetWidth;
+            
+            if (totalWidth > navWidth) {
+                const currentFontSize = parseFloat(window.getComputedStyle(navItems[0]).fontSize);
+                const newFontSize = currentFontSize - 1;
+                
+                navItems.forEach(item => {
+                    item.style.fontSize = `${newFontSize}px`;
+                });
+            }
+        }
+        
+        // Initial adjustment and on resize
+        adjustNavFontSize();
+        window.addEventListener('resize', adjustNavFontSize);
+    </script>
+</body>
+</html>
