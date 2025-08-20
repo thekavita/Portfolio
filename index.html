@@ -278,6 +278,8 @@
             font-size: 1.1rem;
             margin-bottom: 20px;
             color: var(--secondary-black);
+            position: relative;
+            text-align: justify;
         }
         
         .values-container {
@@ -477,6 +479,8 @@
             font-size: 1.1rem;
             margin-bottom: 20px;
             color: var(--secondary-black);
+            position: relative;
+            text-align: justify;
         }
         
         /* Fixed Client Section - 6 logos per row */
@@ -550,6 +554,8 @@
             font-size: 1.1rem;
             margin-bottom: 20px;
             color: var(--secondary-black);
+            position: relative;
+            text-align: justify;
         }
         
         .careers-form {
@@ -607,6 +613,11 @@
         .contact-info {
             flex: 1;
         }
+        .contact-info p{
+            position: relative;
+            text-align: justify;
+        }
+        
         
         .contact-details {
             margin-top: 30px;
@@ -652,6 +663,7 @@
             margin-bottom: 20px;
             font-size: 1.5rem;
         }
+        
         
         /* Footer */
         footer {
@@ -999,6 +1011,15 @@
                             <p>Interactive classroom technology that enhances digital learning experiences and boosts engagement through smart boards, content delivery tools, and remote learning platforms.</p>
                         </div>
                     </div>
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="https://cdn.pixabay.com/photo/2014/11/07/02/08/lightening-520160_640.jpg" alt="Smart Education Solutions">
+                        </div>
+                        <div class="service-content">
+                            <h3>Lightening and Surge Protection</h3>
+                            <p>We provide reliable lighting solutions for enhanced visibility and aesthetics. Our surge protection systems secure equipment from power fluctuations, ensuring smooth and safe operation.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
             
@@ -1098,7 +1119,7 @@
                 </div>
                 <div class="about-text history-text">
                     <h3>Dr. Rohit Bhatnagar - Managing Director</h3>
-                    <p>"I am Dr. Rohit Bhatnagar, with international and Indian experience of more than 36 years in various capacities and fields within respectable organizations."</p>
+                    <p>Our leader and inspiration, Dr. Rohit Bhatnagar, brings with him international and Indian experience of more than 36 years in various capacities and fields within respectable organizations.</p>
                     <p>Under Dr. Bhatnagar's leadership, Pragati Engineers has grown from a startup to a nationally recognized provider of integrated technology and safety solutions. His vision for innovation and commitment to excellence has positioned our company as a trusted partner for both government and private sector projects across India.</p>
                     <a href="history.html" target="_blank" class="btn">View Full History & Gallery</a>
                 </div>
@@ -1141,8 +1162,7 @@
                 <div class="client-logo"><img src="assests/NSSTA16.png" alt="Client 16"></div>
                 <div class="client-logo"><img src="assests/NTPC17.png" alt="Client 17"></div>
                 <div class="client-logo"><img src="assests/Parliment house18.png" alt="Client 18"></div>
-                <div class="client-logo"><img src="assests/BHU19.png" alt="Client 19"></div>
-                 <div class="client-logo"><img src="assests/Immigration20.jfif" alt="Client 20"></div>
+               
             </div>
         </div>
     </section>
@@ -1362,7 +1382,9 @@
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 
-                const target = document.querySelector(this.getAttribute('href'));
+                const href = this.getAttribute('href');
+                const target = document.querySelector(href);
+                
                 if (target) {
                     window.scrollTo({
                         top: target.offsetTop - 80,
@@ -1371,8 +1393,47 @@
                     
                     // Close mobile menu if open
                     navMenu.classList.remove('active');
+                    
+                    // Check if target is a tab content and activate corresponding tab
+                    if (target.classList.contains('tab-content')) {
+                        const tabId = target.id;
+                        const tabBtn = document.querySelector(`.tab-btn[data-tab="${tabId}"]`);
+                        if (tabBtn) {
+                            // Remove active class from all buttons and contents
+                            tabBtns.forEach(b => b.classList.remove('active'));
+                            tabContents.forEach(c => c.classList.remove('active'));
+                            
+                            // Add active class to clicked button
+                            tabBtn.classList.add('active');
+                            
+                            // Show corresponding content
+                            target.classList.add('active');
+                        }
+                    }
                 }
             });
+        });
+        
+        // Check URL hash on page load and activate corresponding tab if needed
+        window.addEventListener('load', function() {
+            if (window.location.hash) {
+                const target = document.querySelector(window.location.hash);
+                if (target && target.classList.contains('tab-content')) {
+                    const tabId = target.id;
+                    const tabBtn = document.querySelector(`.tab-btn[data-tab="${tabId}"]`);
+                    if (tabBtn) {
+                        // Remove active class from all buttons and contents
+                        tabBtns.forEach(b => b.classList.remove('active'));
+                        tabContents.forEach(c => c.classList.remove('active'));
+                        
+                        // Add active class to clicked button
+                        tabBtn.classList.add('active');
+                        
+                        // Show corresponding content
+                        target.classList.add('active');
+                    }
+                }
+            }
         });
         
         // Form Submission Handling
