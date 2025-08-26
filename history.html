@@ -90,11 +90,13 @@
         .hero {
             background: linear-gradient(rgba(26, 58, 95, 0.85), rgba(26, 58, 95, 0.9)), 
                         url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070') center/cover no-repeat;
-            height: 420px;
+            min-height: 420px;
             display: flex;
             align-items: center;
+            justify-content: center;
             position: relative;
             text-align: center;
+            padding: 40px 0;
         }
         
         .hero-content {
@@ -104,6 +106,7 @@
             max-width: 900px;
             margin: 0 auto;
             padding: 0 20px;
+            width: 100%;
         }
         
         .hero h1 {
@@ -780,6 +783,7 @@
             font-weight: 500;
         }
         
+        /* Media Queries - UPDATED FOR MOBILE RESPONSIVENESS */
         @media (max-width: 992px) {
             .about-container {
                 flex-direction: column;
@@ -792,6 +796,10 @@
             
             .hero h1 {
                 font-size: 2.8rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
             }
             
             .section-header h2 {
@@ -812,14 +820,27 @@
             }
             
             .hero {
-                height: 380px;
+                min-height: 380px;
+                height: auto;
+                padding: 30px 0;
             }
             
             .hero h1 {
                 font-size: 2.3rem;
+                line-height: 1.3;
             }
             
             .hero p {
+                font-size: 1.1rem;
+                margin-bottom: 20px;
+            }
+            
+            .quote-box {
+                margin: 25px auto;
+                padding: 15px;
+            }
+            
+            .quote-text {
                 font-size: 1.1rem;
             }
             
@@ -834,11 +855,16 @@
         
         @media (max-width: 576px) {
             .hero {
-                height: 340px;
+                min-height: 340px;
+                padding: 20px 0;
             }
             
             .hero h1 {
-                font-size: 2rem;
+                font-size: 1.8rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
             }
             
             .section-header h2 {
@@ -846,11 +872,12 @@
             }
             
             .quote-box {
-                padding: 15px;
+                margin: 20px auto;
+                padding: 12px;
             }
             
             .quote-text {
-                font-size: 1.1rem;
+                font-size: 1rem;
             }
             
             .education-header {
@@ -861,6 +888,39 @@
             
             .education-icon {
                 margin-bottom: 10px;
+            }
+            
+            /* Additional mobile-specific adjustments */
+            .hero-content {
+                padding: 0 15px;
+            }
+            
+            .logo-text {
+                font-size: 1.4rem;
+            }
+        }
+        
+        /* New media query for very small devices */
+        @media (max-width: 400px) {
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            
+            .hero p {
+                font-size: 0.95rem;
+            }
+            
+            .quote-text {
+                font-size: 0.9rem;
+            }
+            
+            .logo-text {
+                font-size: 1.2rem;
+            }
+            
+            nav a {
+                font-size: 0.9rem;
+                padding: 6px 8px;
             }
         }
     </style>
